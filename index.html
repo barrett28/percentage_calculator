@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<title>Percentage Calculator</title>
+		<style>
+			*{font-size:50px; font-family:Calibri;}
+			body{background-color:orange;}
+		</style>
+		<script>
+			function percentage()
+			{
+				event.preventDefault();
+				let name = document.getElementById("name");
+				let sub1 = document.getElementById("sub1");
+				let sub2 = document.getElementById("sub2");
+				let sub3 = document.getElementById("sub3");
+				let sub4 = document.getElementById("sub4");
+				let sub5 = document.getElementById("sub5");
+				let sub6 = document.getElementById("sub6");
+				let msg = document.getElementById("msg");
+				
+				if(name.value.trim()==0)
+				{
+					alert("Name cannot be null");
+					name.focus();
+					name.value="";
+					msg.innerHTML="";
+
+				}
+				else if (! name.value.match(/^[A-Za-z ]+$/))
+				{
+					alert("Name cannot contain numbers");
+					name.focus();
+					name.value="";
+					msg.innerHTML="";
+				}
+				else if(name.value.trim().length<2)
+				{
+					alert("Name should be more than 2 letters");
+					name.focus();
+					name.value="";
+					msg.innerHTML="";
+				}
+				if (sub1.value=="")
+				{
+					alert("Marks cannot be null");
+					sub1.focus();
+					sub1.value="";
+					msg.innerHTML="";	
+				}
+				if (sub2.value=="")
+				{
+					alert("Marks cannot be null");
+					sub2.focus();
+					sub2.value="";
+					msg.innerHTML="";	
+				}
+				if (sub3.value=="")
+				{
+					alert("Marks cannot be null");
+					sub3.focus();
+					sub3.value="";
+					msg.innerHTML="";	
+				}
+				if (sub4.value=="")
+				{
+					alert("Marks cannot be null");
+					sub4.focus();
+					sub4.value="";
+					msg.innerHTML="";	
+				}
+				if (sub5.value=="")
+				{
+					alert("Marks cannot be null");
+					sub5.focus();
+					sub5.value="";
+					msg.innerHTML="";	
+				}
+				if (sub6.value=="")
+				{
+					alert("Marks cannot be null");
+					sub6.focus();
+					sub6.value="";
+					msg.innerHTML="";	
+				}
+	
+
+				let res = (parseInt(sub1.value)+parseInt(sub2.value)+parseInt(sub3.value)+parseInt(sub4.value)+parseInt(sub5.value)+parseInt(sub6.value))*100;
+				let res1 = res/600;
+				let ans = "Hello " + name.value +" your percentage is: "+res1.toFixed(2);
+				msg.innerHTML=ans;
+				
+
+			}
+		</script>
+
+	</head>
+	
+
+	<body>
+	<center>
+		<h1>Percenatge Calculator</h1>
+		<form onsubmit="percentage()">
+		<label>Please Enter your marks 👇🏻</label>
+		<br/><br/>
+		<input type="text" placeholder="Enter ur name" id="name" style="border-radius:30px;"/>
+		<br/><br/>
+		&nbsp;English: <input type="number" placeholder="Marks out of 100" id="sub1" style="border-radius:30px;font-size:35px; width:270px"/>
+		<br/>
+		Maths: <input type="number" placeholder="Marks out of 100" id="sub2" style="border-radius:30px;font-size:35px; width:270px"/>
+		<br/>
+		&nbsp;&nbsp;Science: <input type="number" placeholder="Marks out of 100" id="sub3" style="border-radius:30px;font-size:35px; width:270px"/>
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 Social Science: <input type="number" placeholder="Marks out of 100" id="sub4" style="border-radius:30px;font-size:35px; width:270px"/>	
+		<br/>
+		Hindi: <input type="number" placeholder="Marks out of 100" id="sub5" style="border-radius:30px;font-size:35px; width:270px; margin-right:30px;"/>
+		<br/>
+		&nbsp;&nbsp;Marathi: <input type="number" placeholder="Marks out of 100" id="sub6" style="border-radius:30px;font-size:35px; width:270px"/>
+		<br/><br/>
+		<input type="submit" style="border-radius:30px;"/>
+		</form>
+		<h1 id="msg"><h1/>
+	</center>	
+	</body>
+
+</html>
